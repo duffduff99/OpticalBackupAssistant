@@ -1,0 +1,49 @@
+name: Build
+
+on:
+  push:
+    branches: ["**"]
+    tags: ["v*"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  cross-check:
+    # Runs the tests where par2cmdline and 7-Zip are available, so the PAR2 files and UDF
+    # images the program writes are validated by independent implementations.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      - run: sudo apt-get update && sudo apt-get install -y par2 p7zip-full
+      - run: dotnet test tests/OpticalBackup.Tests -c Release
+
+  windows:
+    runs-on: windows-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      - run: dotnet test tests/OpticalBackup.Tests -c Release
+      - name: Publish single-file exe
+        run: >
+          dotnet publish src/OpticalBackup.App -c Release -r win-x64 --self-contained
+          -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true
+          -p:EnableCompressionInSingleFile=true -p:DebugType=none -o publish
+      - uses: actions/upload-artifact@v4
+        with:
+          name: OpticalBackupAssistant-win-x64
+          path: publish/OpticalBackupAssistant.exe
+      - name: Attach to release
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: gh release create "${{ github.ref_name }}" publish/OpticalBackupAssistant.exe --generate-notes
+        env:
+          GH_TOKEN: ${{ github.token }}

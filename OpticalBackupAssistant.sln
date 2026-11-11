@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D54C7F8A-C6A1-426E-B08A-B8D441E931C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpticalBackup.Core", "src\OpticalBackup.Core\OpticalBackup.Core.csproj", "{4962FE87-1446-42F8-96F7-A4A46715917B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpticalBackup.App", "src\OpticalBackup.App\OpticalBackup.App.csproj", "{59009861-68FD-4B49-A42F-FF3C17D16EB1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpticalBackup.Cli", "src\OpticalBackup.Cli\OpticalBackup.Cli.csproj", "{AF3E210B-B30F-48B5-B51D-F94CA3AEA39F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{15850D1C-E5AE-4959-9796-98450552D4B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpticalBackup.Tests", "tests\OpticalBackup.Tests\OpticalBackup.Tests.csproj", "{08D87D4A-94F8-4C8F-834A-369CEB609ECC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4962FE87-1446-42F8-96F7-A4A46715917B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4962FE87-1446-42F8-96F7-A4A46715917B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4962FE87-1446-42F8-96F7-A4A46715917B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4962FE87-1446-42F8-96F7-A4A46715917B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59009861-68FD-4B49-A42F-FF3C17D16EB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59009861-68FD-4B49-A42F-FF3C17D16EB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59009861-68FD-4B49-A42F-FF3C17D16EB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59009861-68FD-4B49-A42F-FF3C17D16EB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF3E210B-B30F-48B5-B51D-F94CA3AEA39F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF3E210B-B30F-48B5-B51D-F94CA3AEA39F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF3E210B-B30F-48B5-B51D-F94CA3AEA39F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF3E210B-B30F-48B5-B51D-F94CA3AEA39F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08D87D4A-94F8-4C8F-834A-369CEB609ECC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08D87D4A-94F8-4C8F-834A-369CEB609ECC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08D87D4A-94F8-4C8F-834A-369CEB609ECC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08D87D4A-94F8-4C8F-834A-369CEB609ECC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4962FE87-1446-42F8-96F7-A4A46715917B} = {D54C7F8A-C6A1-426E-B08A-B8D441E931C1}
+		{59009861-68FD-4B49-A42F-FF3C17D16EB1} = {D54C7F8A-C6A1-426E-B08A-B8D441E931C1}
+		{AF3E210B-B30F-48B5-B51D-F94CA3AEA39F} = {D54C7F8A-C6A1-426E-B08A-B8D441E931C1}
+		{08D87D4A-94F8-4C8F-834A-369CEB609ECC} = {15850D1C-E5AE-4959-9796-98450552D4B5}
+	EndGlobalSection
+EndGlobal
